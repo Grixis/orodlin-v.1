@@ -1,0 +1,75 @@
+/* meredith */
+body {
+	background: #000000;
+	color: #ADDFE1;
+}
+
+* {
+
+	font-family: Verdana;
+	font-size: 9pt;
+}
+
+fieldset {
+	border: 1px solid;
+	margin-bottom: 5px;
+	padding: 5px;
+}
+
+input, textarea, select {
+  	color: #E5F5F6;
+  	background: #1A1A1A;
+  	border: 1px solid #404040;
+  	margin-left: 10px;
+	margin: 1px;
+}
+
+input:hover, textarea:hover, select:hover, input:focus, textarea:focus, select:focus {
+	background: #262626;
+	color: #F7FCFC;
+}
+
+
+a {
+  	color: #D7D7D7;
+  	font-weight: bold;
+  	text-decoration: none;
+}
+
+a:hover {
+  	text-decoration: none;
+  	color: #00A3CC;
+}
+
+.forum {
+  	font-weight: normal;
+    color: #ADDFE1;
+}
+
+.mon1 {
+	background: #205455;
+	color: #D7D7D7;
+}
+
+.mon1 a {
+	color: #D7D7D7;
+}
+
+
+.mon2 {
+	background: #D7D7D7;
+	color: #205455;
+}
+
+.mon2 a {
+	color: #205455;
+}
+
+span.Tag {
+	color: #CC8800;
+	font-size: 100%;
+}
+
+#players a {
+	font-size: 90%;
+}

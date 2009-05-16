@@ -1,0 +1,2 @@
+Copyright (c) <YEAR> <OWNER>. All rights reserved.
+Licensed under BSD License. See install/BSDLicense.txt for full text of license.

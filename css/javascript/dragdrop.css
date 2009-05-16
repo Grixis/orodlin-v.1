@@ -1,0 +1,120 @@
+.draggable
+{
+    position: absolute;
+    width: 250px;
+    height: 35px;
+    border: 1px solid #0090DF;
+    background-color: #909090;
+    padding: 1px;
+    text-align: left;
+    cursor: move;
+}
+
+.nondraggable
+{
+    position: absolute;
+    width: 250px;
+    height: 35px;
+    border: 1px solid #0090DF;
+    background-color: #208020;
+    padding: 1px;
+    text-align: left;
+}
+
+.dropzone
+{
+    width: 270px;
+    background-color: #FFFFFF;
+    border: 1px dotted #900;
+    padding: 5px;
+    overflow: hidden;
+    color: #000;
+}
+
+.frameClass
+{
+    border: 1px dotted #999;
+}
+
+.sidearm, .bow, .armor, .shield, .helmet, .legs, .ring
+{
+    height:40px;
+    width: 80px;
+    position: absolute;
+    border: 1px solid #0090DF;
+    background-color: #909090;
+    padding: 1px;
+    text-align: left;
+    font-size: smaller;
+    cursor: move;
+}
+
+.dropequipment
+{
+    width: 60px;
+    height: 60px;
+}
+
+#sidearm
+{
+    background-image: url(../../images/outposts/items/sidearm.png);
+}
+
+#bow
+{
+    background-image: url(../../images/outposts/items/bow.png);
+}
+
+#armor
+{
+    background-image: url(../../images/outposts/items/armor.png);
+}
+
+#shield
+{
+    background-image: url(../../images/outposts/items/shield.png);
+}
+
+#helmet
+{
+    background-image: url(../../images/outposts/items/helmet.png);
+}
+
+#legs
+{
+    background-image: url(../../images/outposts/items/legs.png);
+}
+#ring1
+{
+    background-image: url(../../images/outposts/items/ring1.png);
+}
+
+#ring2
+{
+    background-image: url(../../images/outposts/items/ring2.png);
+}
+
+.veteran
+{
+    width: 150px;
+    height: 55px;
+    border: 1px solid #0090DF;
+    background-color: #909090;
+    padding: 1px;
+    text-align: left;
+    cursor: move;
+}
+
+.vetEquipment {
+    width: 200px;
+    float: right;
+}
+
+#equipment {
+    list-style: none;
+}
+
+#equipment li {
+    display: inline;
+    margin-right: 10px;
+}

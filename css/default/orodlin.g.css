@@ -1,0 +1,54 @@
+/* gory */
+body {
+	background: #000000;
+	color: #EDEFC7;
+}
+
+* {
+
+	font-family: Verdana;
+	font-size: 9pt;
+}
+
+fieldset {
+	border: 1px solid;
+}
+
+input, textarea, select {
+  	color: #F4F5DB;
+  	background: #1A1A1A;
+  	border: 1px solid #404040;
+  	margin-left: 10px;
+	margin: 1px;
+}
+
+input:hover, textarea:hover, select:hover, input:focus, textarea:focus, select:focus {
+	background: #262626;
+	color: #FAFBEF;
+}
+
+
+a {
+  	color: #C5C35F;
+  	font-weight: bold;
+  	text-decoration: none;
+}
+
+a:hover {
+  	text-decoration: none;
+  	color: #80CB6C;
+}
+
+.forum {
+  	font-weight: normal;
+    color: #EDEFC7;
+}
+
+span.Tag {
+	color: #CC8800;
+	font-size: 100%;
+}
+
+#players a {
+	font-size: 90%;
+}

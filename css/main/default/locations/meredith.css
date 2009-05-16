@@ -1,0 +1,12 @@
+#top {
+	width: 990px;
+	height: 80px;
+	background: url(../../../../images/top/topmeredith.jpg) no-repeat;
+	padding: 0;
+	margin-bottom: 20px;
+}
+
+.submenu {
+	background: url(../../../../images/backgrounds/c.m.jpg) repeat-y;
+	padding: 0 5px;
+}

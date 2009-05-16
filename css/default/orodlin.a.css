@@ -1,0 +1,73 @@
+/*agarakar*/
+body {
+	background: #000000;
+	color: #FFEBAA;
+}
+
+* {
+	font-family: Verdana;
+	font-size: 9pt;
+}
+
+fieldset {
+	border: 1px solid;
+}
+
+input, textarea, select {
+  	color: #FFF2C2;
+  	background: #1A1A1A;
+  	border: 1px solid #404040;
+  	margin-left: 10px;
+	margin: 1px;
+}
+
+input:hover, textarea:hover, select:hover, input:focus, textarea:focus, select:focus {
+	background: #262626;
+	color: #FFF7DB;
+}
+
+
+a {
+  	color: #CB8657;
+  	font-weight: bold;
+  	text-decoration: none;
+}
+
+a:hover {
+  	text-decoration: none;
+	font-weight: none;
+  	color: #D65757;
+}
+
+.forum {
+  	font-weight: normal;
+	color: #FFEBAA;
+}
+
+.mon1 {
+	background: #56331A;
+	color: #FFEBAA;
+}
+
+.mon1 a {
+	color: #FFEBAA;
+}
+
+
+.mon2 {
+	background: #c1b181;
+	color: #56331A;
+}
+
+.mon2 a {
+	color: #56331A;
+}
+
+span.Tag {
+	color: #FFAA00;
+	font-size: 100%;
+}
+
+#players a {
+	font-size: 90%;
+}

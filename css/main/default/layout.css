@@ -1,0 +1,374 @@
+body {
+	margin: 0 auto 0 auto;
+	text-align: center;
+}
+
+#container {/*Glowne 'pudlo' gry*/
+	width: 990px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+#leftbar {/*Menu lewo*/
+	float: left;
+	text-align: left;
+	width: 200px;
+	max-width: 200px;
+	min-height: 550px;
+}
+
+#content {/*Srodek*/
+	position: relative;
+	margin-left: 10px;
+	float: left;
+	width: 570px;
+	min-height: 550px;
+}
+
+#rightbar {/*Menu prawo*/
+	float: right;
+	width: 200px;
+	max-width: 200px;
+	min-height: 550px;
+}
+
+#stats {/*Lewo gora*/
+	position: relative;
+}
+
+#navigation {/*Lewo dol*/
+	position: relative;
+}
+
+#navigation ul, #stats ul {
+	margin-bottom: 0;
+	list-style-type: none;
+	list-style-image: url(../../../images/misc/list.png);
+	position: relative;
+	padding-left: 25px;
+	margin-left: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
+
+.center {
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+
+p {
+	text-indent: 0.8em;
+}
+
+.justify {
+	text-align: justify;
+}
+
+.overflow {
+	overflow: auto;
+}
+
+a img {
+	border: 0;
+}
+
+th {
+	text-decoration: underline;
+}
+
+ul.sword {
+	list-style-type: none;
+	list-style-image: url(../../../images/misc/list.png);
+}
+	
+.bar-header { /*Tytuly podstron na srodku*/
+	position: relative;
+	font-weight: bold;
+	font-size: inherit;
+	text-align: center;
+	padding-bottom: 0.5em;
+}
+
+.foot {
+	clear: both;
+	text-align: center;
+	width: 990px;
+	margin: 0 auto 0 auto;
+}
+
+.money { /*Fieldsety w zloto.php*/
+	padding: 1px;
+	width: 48%;
+	float: left;
+}
+
+/**
+* Gazeta
+**/
+
+#newspaper {
+	width: 100%;
+	text-align: center;
+}
+
+span.arttitle {
+	font-style: italic;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+.art {
+	overflow: auto;
+}
+
+.arthead {
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.artbody {
+	text-indent: 10px;
+	text-align: justify;
+	margin-bottom: 1em;
+}
+
+.artbody:first-letter {
+	font-size: 2.5em;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.artfooter {
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.paperbodycolumnleft {
+	width: 48%;
+	float: left;
+}
+
+.paperbodycolumnright {
+	width: 48%;
+	float: right;
+}
+
+.paperfooter {
+	clear: both;
+	text-align: center;
+}
+
+.secname {
+	text-align: center;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+.article {
+	margin-left: 10px;
+	text-align: center;
+	margin-bottom: 1em;
+	overflow: auto;
+}
+
+span.articletitle {
+	font-style: italic;
+}
+
+span.articlefooter {
+	font-size: 0.9em;
+}
+
+.prevnext form {
+	display: inline;
+}
+
+.comments, .comment, .addcomment {
+	text-align: left;
+}
+
+.readinfo {
+	font-size: 1.2em;
+	font-style: italic;
+	font-weight: bold;
+	text-decoration: underline;
+	text-align: center;
+}
+
+.sec {
+}
+
+.sec:hover {
+	background: #0D0D0D;
+}
+/**
+* Koniec gazety
+**/
+
+img.vmiddle {/*Wysrodkowanie ikon paneli bocznych w pionie*/
+	margin-top: 1px;
+	margin-bottom: 1px;
+	vertical-align: -4px;
+}
+
+.menuleft {/*Informacje w panelach bocznych: dosw., zycie itd.*/
+	vertical-align: middle;
+	min-height: 18px;
+	padding-bottom: 1px;
+}
+
+.citytitle {/*Nazwy dzielnic miast*/
+	text-align: center;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+td.montitle {/*Posagi: 'Imie' i 'poziom'*/
+	text-align: center;
+	width: 100px;
+	font-size: 90%;
+	font-weight: bold;
+} 
+
+.imghead {/*Graficzne nazwy paneli bocznych*/ 
+	text-align: center;
+	margin: 0 auto;
+	padding-top: 2px;
+	padding-bottom: 4px;
+}
+
+/**
+* Swiatynia
+**/
+#prayer label {
+	margin-left: 5px;
+}
+
+#prayer label:hover {
+	font-weight: bold;
+}
+
+p.bless {
+	font-weight: bold;
+}
+
+.columnleft {
+	width: 48%;
+	float: left;
+}
+
+.columnright {
+	width: 48%;
+	float: right;
+}
+/**
+* Koniec swiatyni
+**/
+
+/**
+* Dziennik
+**/
+.log {
+	width: 90%;
+	margin: 0 auto 10px auto;
+}
+
+.eventname {
+	font-weight: bold;
+	font-size: 0.9em;
+}
+
+.log:hover {
+	background: #202020;	
+}
+
+span.date {
+	font-size: 0.9em;
+}
+/**
+* Koniec dziennika
+**/
+
+#signatures input {/*Inputy w spersonalizowanych sygnaturach*/
+	width: 500px;
+	padding: 1px;
+}
+
+img.sigs {
+	margin: 0 auto;
+	padding: 4px;
+	background: #969696;
+	border: 1px solid gray;
+}
+
+a.help {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.topmenu {
+	width: 200px;
+	height: 11px;
+	background: url(../../../images/backgrounds/t.jpg) no-repeat;
+	padding: 0;
+	margin: 0;
+	font-size: 1px;
+}
+
+.bottommenu {
+	width: 200px;
+	height: 11px;
+	background: url(../../../images/backgrounds/b.jpg) no-repeat;
+	padding: 0;
+	margin-bottom: 20px;
+	font-size: 1px;
+}
+
+#memberlist {
+	font-size: 90%;
+}
+
+#memberlist a {
+	font-size: 100%;
+}
+
+.footimg {
+	margin: 0 auto;
+	text-align: center;
+	padding: 1em 0;
+}
+
+.bugrepair {
+	background: #00A300;
+	color: #000000;
+}
+
+.bugrepair:hover {
+	color: #FFFFFF;
+}
+
+tr.bugrepair:hover a {
+	color: #FFFFFF;
+}
+
+#ann {
+	position: relative;
+}
+
+#ann label {
+	width: 100px;
+	float: left;
+	text-align: right;
+}
+
+#ann input, #ann textarea {
+	padding: 0;
+	margin: 1px;
+}

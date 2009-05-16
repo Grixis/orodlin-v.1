@@ -1,0 +1,23 @@
+Mapowanie ikon dla zestawu "blue". Ikony można obejrzeć w tym katalogu.
+
+UŚMIECH		:-) :)
+ŚMIECH		:-D :D :-d :-d
+KONTENT		:-] :]
+ŻART		;-) ;)
+JĘZOR		:-P :P :-p :p
+SMUTNY		:-( :(
+PŁACZ		;-( ;(
+KLAUN		:o) :*)
+YYY 		:-/ :/
+SCEPTYCZNY	:-| :|
+ZDZIWIONY	:o 8-( 8(
+COOL		B-) B) 8-) 8)
+WŚCIEKŁY	:m
+MĄDRALA		;>
+WSTYD		:%
+KUFEL		c[]
+ZŁY		:[
+WIEWIÓR		>;p
+CMOK		:*
+OLDSCHOOL	:E
+SERDUSZKO 	<3

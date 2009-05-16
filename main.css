@@ -1,0 +1,280 @@
+body {
+  	background: #000000;
+	text-align: center;
+}
+
+body img, a img {
+	border: 0;
+}
+
+* {
+  	color: #E4C49B;
+  	font-family: Verdana;
+  	font-size: 9pt;
+}
+
+input, textarea, select {
+  	color: #CAB8AF;
+  	background: #1A1A1A;
+  	border: 1px solid #404040;
+	margin: 1px;
+}
+
+input:hover, textarea:hover, select:hover, input:focus, textarea:focus, select:focus {
+	background: #262626;
+	color: #DED3CE;
+}
+
+a {
+  	color: #E5C39A;
+	font-weight: bold;
+  	text-decoration: none;
+}
+
+a:hover {
+  	color: #DAAB71;
+  	text-decoration: none;
+}
+
+#container {/*Glowne pudlo*/
+	width: 900px;
+	margin: 0 auto;
+}
+
+#logo {/*Pudlo na logo*/
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+#left {/*Lewo*/
+	text-align: left;
+	background: #000000;
+	float: left;
+	width: 200px;
+	min-height: 300px;
+	overflow: hidden;
+}
+
+#content {/*Srodek*/
+	margin: 0 1.3%;
+	text-align: justify;
+	width: 475px;
+	float: left;
+	overflow: hidden;
+}
+
+#right {/*Prawo*/
+	text-align: left;
+	background: #000000;
+	float: right;
+	width: 200px;
+	min-height: 300px;
+	overflow: hidden;
+}
+
+.topmenu {
+	width: 200px;
+	height: 11px;
+	background: url(images/backgrounds/t.jpg) no-repeat;
+	padding: 0;
+	margin: 0;
+	font-size: 1px;
+}
+
+.submenu {
+	background: url(images/backgrounds/c.jpg) repeat-y;
+	padding: 0 5px;
+}
+
+.bottommenu {
+	width: 200px;
+	height: 11px;
+	background: url(images/backgrounds/b.jpg) no-repeat;
+	padding: 0;
+	margin-bottom: 20px;
+	font-size: 1px;
+}
+
+/**
+* Main menu start
+*/
+ul#menu {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul#menu li {
+	text-align: left;
+	font-style: italic;
+}
+
+ul#menu li a.forum {
+	color: #B33C00;
+}
+
+ul#menu li a.forum:hover {
+	color: white;
+}
+
+ul#menu a {
+	display: block;
+	text-align: center;
+	font-weight: normal;
+	height: 21px;
+	width: 190px;
+	padding-top: 3px;
+}
+
+ul#menu a:hover {
+	color: white;
+	background: url(images/misc/menu.jpg) no-repeat;
+}
+
+/**
+* Main menu koniec
+*/
+
+.foot {/*Stopka*/
+	clear: both;
+	text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+.lostpasswd a {
+	text-align: center;
+	font-size: 0.9em;
+}
+
+.title2 {/*Naglowek uzyty w register.tpl*/
+	font-weight: bold;
+	font-size: 1.1em;
+	text-align: center;
+	margin: 0.2em 0;
+}
+
+.text {/*Styl dla roznych tekstow*/
+	margin: 0 1em;
+}
+
+.news {/*Wiesci na stronie glownej*/
+	overflow: auto;
+	margin: 0 1em;
+}
+
+#reg {/*Box z rejestracja*/
+	text-align: right;
+}
+	
+.register {
+	text-align: right;
+}
+
+.center {
+	text-align: center;
+}
+
+.right_text {/*FAQ*/
+    	width: 48%;
+    	float: right;
+}
+
+.left_text {/*FAQ*/
+    	width: 48%;
+    	float: left;
+}
+
+.right_text ul, .left_text ul {/*FAQ*/
+	margin-top: 0;
+}
+
+ul.sword {
+	list-style-type: none;
+	list-style-image: url(images/misc/list.png);
+}
+
+.newsimg {/*Obrazek wiesci*/
+	margin: 0 137px;
+	width: 200px;
+	height: 96px;
+	background: url(images/misc/wiesci.jpg) no-repeat;
+}
+
+p {
+	text-indent: 0.8em;
+}
+
+.imghead {/*Obrazki w panelach bocznych*/
+	text-align: center;
+	margin: 0 auto;
+	padding: 2px 0 4px 0;
+}
+
+.imgtitle {/*Obrazki w srodku, wieksze*/
+	text-align: center;
+	margin: 0 auto;
+	padding: 1em 0;
+
+}
+
+.regico {/*Ikona w rejestracji*/
+	width: 100px;
+	height: 100px;
+	float: left;
+}
+
+.regico img {
+	padding: 21px 0 0 21px;
+}
+	
+img.logicon {/*Ikony przy logowaniu*/
+	padding-right: 3px;
+}
+
+img.promo {/*Grafiki promocyjne */
+	margin: 5px auto 10px auto;
+	padding: 4px;
+	background: gray;
+	border: 1px solid gray;
+}
+
+#ads {/*Reklamy gugle*/
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 120px;
+	height: 240px;
+}
+
+.button {
+	margin: 0 auto;
+	text-align: center;
+	padding: 3px 0;
+}
+	
+hr {
+	background: url(images/misc/footer.png) no-repeat center center;
+	height: 1px;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+span.Tag {
+	font-size: 100%;
+}
+
+.footimg {
+	margin: 0 auto;
+	text-align: center;
+	padding: 1em 0;
+}

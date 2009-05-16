@@ -1,0 +1,29 @@
+Dystrybucja kodu powstałego na bazie niniejszego pakietu oraz uruchomienie gry na jego podstawie jest możliwa tylko i wyłącznie przy zachowaniu niezmienionej informacji o prawach autorskich (można dodawać nazwiska, nie można usuwać), licencji oraz linku do strony http://orodlin.pl oraz w/w informacji w stopce gry.
+
+Większość kodu licencjonowana jest w ramach licencji GPL, wersja 2. Tekst licencji GPL 2 znajduje się w pliku install/GPL.txt.
+
+Tekst licencji BSD znajduje się w pliku install/BSDLicense.txt.
+Tekst licencji AGPL 3 znajduje się w pliku install/AGPL.txt. Uwaga: Wymaga ona umożliwienia ściągnięcia kodu plików nią objętych z każdego serwisu ich używającego.
+
+Jeżeli nie jest zaznaczone inaczej, kod objęty jest licencją AGPL 3.
+
+Oto lista autorów kodu (porządek alfabetyczny):
+
+Jakub Stasiak <kuba.stasiak at gmail.com>
+Łukasz Ludwiczak <l.ludwiczak at gmail.com>
+Marcin Mańkowski <briskuth at gmail.com>
+Marek 'marq' Chodor <marek.chodor at gmail.com>
+Marek Stasiak <em.stasiak at gmail.com>
+mori <ziniquel at users.sourceforge.net>
+Nailo Mzah <s.paweska at gmail.com>
+Paweł Dudziec <pawel.dudziec at gmail.com>
+Sławomir Białas <stormsb at gmail.com>
+thindil <thindil at users.sourceforge.net>
+Tomasz Duda <tduda at users.sourceforge.net>
+Tril <tril at faerun.com.pl>
+Witold Sosnowski <albi at jabster.pl>
+yeskov <yeskov at users.sourceforge.net>
+Zamareth <zamareth at gmail.com>
+Zamareth <zamareth at users.sourceforge.net>
+
+UWAGA. W pakiecie znajduje się plik source.php pozwalający na podgląd większości plików gry (z wyłączeniem takich zawierających informacje newralgiczne i nieprzydatne nikomu oprócz złodziei).
