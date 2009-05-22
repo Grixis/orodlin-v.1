@@ -6,6 +6,9 @@ Tekst licencji BSD znajduje się w pliku install/BSDLicense.txt.
 Tekst licencji AGPL 3 znajduje się w pliku install/AGPL.txt. Uwaga: Wymaga ona umożliwienia ściągnięcia kodu plików nią objętych z każdego serwisu ich używającego.
 
 Jeżeli nie jest zaznaczone inaczej, kod objęty jest licencją AGPL 3.
+W celu spełnienia warunków licencji AGPL na serwerze musi znajdować się plik source.php umożliwiający ściągnięcie kodu gry.
+
+Dystrubucja kodu gry zawiera plik z krojem czcionki Bitstream Vera. Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved. Więcej informacji w pliku fonts/Vera.license
 
 Oto lista autorów kodu (porządek alfabetyczny):
 

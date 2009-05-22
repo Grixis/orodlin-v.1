@@ -16,12 +16,12 @@ Dla Debiana/Ubuntu/Minta:
 
 sudo apt-get install apache2 libapache2-mod-php5 php5-mysql mysql-server phpmyadmin
 
-Użytkownikom Windows zalecamy instalację pakietu WAMP.
+Użytkownikom Windows zalecamy instalację pakietu WAMP. A najlepiej zainstalowanie Linuksa.
 
 -----
 
 2. Licencja
-Informacje licencyjne znajdują się w pliku install/authors.txt
+Informacje licencyjne znajdują się w pliku readme/authors.txt
 
 3. Szybka instalacja:
 
