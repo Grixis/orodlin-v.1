@@ -1,1 +1,1 @@
-<?php $ilosc=12509 ?>
+<?php $ilosc=0 ?>
