@@ -1,6 +1,3 @@
-# Server-specific files
-log.csv
-
 # Temp files
 *.pyc
 *~
