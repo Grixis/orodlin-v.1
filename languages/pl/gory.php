@@ -35,7 +35,7 @@ define('A_HERE', 'tutaj');
 define('MOUNT_INFO', '<p>Opis Gór. Zastanawiasz się chwilę co masz robić.</p>');
 define('A_MINE', 'Idź do kopalni');
 define('A_SEARCH', 'Zwiedzaj góry');
-define('A_CITY', 'Ścieżka do '$city2);
+define('A_CITY', 'Ścieżka do '.$city2.'');
 define('A_TRAVEL', 'Stajnia');
 define('YOU_DEAD', 'Jesteś martwy');
 define('BACK_TO', 'Powrót do '.$city2.'');
