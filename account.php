@@ -704,7 +704,7 @@ if (isset($_GET['view']) && $_GET['view'] == "profile")
 							"Change" => CHANGE));
 	if (isset($_GET['step']) && $_GET['step'] == 'profile')
 	{
-		if (empty ($_POST['profile']))
+		if (empty($_POST['profile']))
 		{
 			error (EMPTY_FIELDS);
 		}

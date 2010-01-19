@@ -376,6 +376,7 @@ CREATE TABLE `chat` (
   `senderid` int(11) NOT NULL default '0',
   `ownerid` int(11) NOT NULL default '0',
   `time` double(22,6) NOT NULL default '0.000000',
+  `room` varchar(10) NOT NULL,
   PRIMARY KEY  (`id`)
 ) TYPE=MyISAM AUTO_INCREMENT=1 ;
 
@@ -395,6 +396,7 @@ CREATE TABLE `chat_config` (
   `cisza` char(2) NOT NULL default 'Y',
   `gracz` int(11) NOT NULL default '0',
   `resets` int(11) NOT NULL default '0',
+  `room` varchar(30) NOT NULL,
   UNIQUE KEY `gracz` (`gracz`),
   KEY `id` (`id`)
 ) TYPE=MyISAM AUTO_INCREMENT=1 ;
@@ -413,6 +415,7 @@ CREATE TABLE `chat_config` (
 CREATE TABLE `chat_users` (
   `userid` int(11) NOT NULL default '0',
   `time` double(22,6) NOT NULL default '0.000000',
+  `room` varchar(10) NOT NULL,
   PRIMARY KEY  (`userid`)
 ) TYPE=MyISAM;
 
