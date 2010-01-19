@@ -200,7 +200,7 @@
     {$Profileinfo}<br /><br />
     <form method="post" action="account.php?view=profile&amp;step=profile">
     <table align="center">
-    <tr><td align="center">{$Newprofile}:<br /> <textarea name="profile" id="profile" rows="20" cols="65">{$Editable}</textarea></td></tr>
+    <tr><td align="center">{$Newprofile}:<br /> <textarea name="newprofile" id="profile" rows="20" cols="65">{$Editable}</textarea></td></tr>
     <tr><td colspan="2" align="center"><input type="submit" value="{$Change}" /></td></tr>
     </table>
     </form>

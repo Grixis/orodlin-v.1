@@ -704,17 +704,17 @@ if (isset($_GET['view']) && $_GET['view'] == "profile")
 							"Change" => CHANGE));
 	if (isset($_GET['step']) && $_GET['step'] == 'profile')
 	{
-		if (empty($_POST['profile']))
+		if (empty($_POST['newprofile']))
 		{
 			error (EMPTY_FIELDS);
 		}
 		require_once('includes/bbcode.php');
-		$_POST['profile'] = censorship($_POST['profile']);
-		$_POST['profile'] = bbcodetohtml($_POST['profile']);
-		$strEditable = htmltobbcode($_POST['profile']);
-		$strProfile = $db -> qstr($_POST['profile'], get_magic_quotes_gpc());
+		$_POST['newprofile'] = censorship($_POST['newprofile']);
+		$_POST['newprofile'] = bbcodetohtml($_POST['newprofile']);
+		$strEditable = htmltobbcode($_POST['newprofile']);
+		$strProfile = $db -> qstr($_POST['newprofile'], get_magic_quotes_gpc());
 		$db -> Execute("UPDATE players SET profile = ".$strProfile." WHERE id = '".$player -> id."'");
-		$smarty -> assign (array("Profile" => $_POST['profile'],
+		$smarty -> assign (array("Profile" => $_POST['newprofile'],
 								 "Editable" => $strEditable,
 								 "Newprofile2" => NEW_PROFILE2));
 	}

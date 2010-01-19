@@ -34,38 +34,33 @@
  */
 function displaycomments($intItemid, $strItemtable, $strCommentstable, $strCommentsid)
 {
-    global $arrBody;
-    global $arrAuthor;
-    global $arrId;
-    global $arrDate;
+	global $arrBody, $arrAuthor, $arrId, $arrDate, $i;
     global $db;
+    
+    $oldFetchMode = $db -> SetFetchMode(ADODB_FETCH_NUM);
 
     if (!ereg("^[1-9][0-9]*$", $intItemid))
     {
         error(ERROR);
     }
-    $objText = $db -> Execute("SELECT `id` FROM `".$strItemtable."` WHERE `id`=".$intItemid);
-    if (!$objText -> fields['id'])
+    $objText = $db -> getRow("SELECT `id` FROM `".$strItemtable."` WHERE `id`=".$intItemid);
+    if (empty($objText))
     {
         error(NO_TEXT);
     }
-    $objText -> Close();
-    $objComments = $db -> Execute("SELECT `id`, `body`, `author`, `time` FROM `".$strCommentstable."` WHERE `".$strCommentsid."`=".$intItemid." ORDER BY `id`") or die($db -> ErrorMsg());
+    $objComments = $db -> getAll("SELECT `id`, `body`, `author`, `time` FROM `".$strCommentstable."` WHERE `".$strCommentsid."`=".$intItemid." ORDER BY `id`");
     $arrBody = array();
     $arrAuthor = array();
     $arrId = array();
     $arrDate = array();
-    $i = 0;
-    while (!$objComments -> EOF)
+    for ($i=0, $intMax = count($objComments) ; $i < $intMax ; $i++)
     {
-        $arrBody[$i] = $objComments -> fields['body'];
-        $arrAuthor[$i] = $objComments -> fields['author'];
-        $arrId[$i] = $objComments -> fields['id'];
-        $arrDate[$i] = $objComments -> fields['time'];
-        $i = $i + 1;
-        $objComments -> MoveNext();
+        $arrBody[$i] = $objComments[$i][1];
+        $arrAuthor[$i] = $objComments[$i][2];
+        $arrId[$i] = $objComments[$i][0];
+        $arrDate[$i] = $objComments[$i][3];
     }
-    $objComments -> Close();
+    $db -> SetFetchMode($oldFetchMode);
 }
 
 /**
