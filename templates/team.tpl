@@ -28,7 +28,7 @@
 		{/if}
 
 		{if $Admin == 1}
-		<a href="team.php?mode=delete&amp;id={$Member.ID}{$AddrSufix}">{if $Graphstyle == "Y"}<img src="" title="{$smarty.const.TEAM_DELETE}" alt="img_{$smarty.const.TEAM_DELETE}" />{else}{$smarty.const.TEAM_DELETE}{/if}</a> <a href="team.php?mode=modify&amp;id={$Member.ID}{$AddrSufix}">{if $Graphstyle == "Y"}<img src="" title="img_{$smarty.const.TEAM_MODIFY}" alt="{$smarty.const.TEAM_MODIFY}" />{else}{$smarty.const.TEAM_MODIFY}{/if}</a>
+		<a href="team.php?mode=delete&amp;id={$Member.ID}{$AddrSufix}">{if $Graphstyle == "Y"}<img src="images/icons/delete.png" title="{$smarty.const.TEAM_DELETE}" alt="img_{$smarty.const.TEAM_DELETE}" />{else}{$smarty.const.TEAM_DELETE}{/if}</a> <a href="team.php?mode=modify&amp;id={$Member.ID}{$AddrSufix}">{if $Graphstyle == "Y"}<img src="images/icons/edit.png" title="img_{$smarty.const.TEAM_MODIFY}" alt="{$smarty.const.TEAM_MODIFY}" />{else}{$smarty.const.TEAM_MODIFY}{/if}</a>
 		<br />
 		{/if}
 		{$smarty.const.TEAM_NAME}: <b>{$Member.Name}</b><br />

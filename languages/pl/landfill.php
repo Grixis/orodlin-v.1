@@ -49,7 +49,7 @@ if (isset($_GET['action']))
 	}
 	if ($player -> location == 'Ardulith')
 	{
-        	ddefine('LAND_INFO', 'Opis Pracy w '.$city2);
+        	define('LAND_INFO', 'Opis Pracy w '.$city2);
 	}
 
 

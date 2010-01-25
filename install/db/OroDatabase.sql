@@ -1299,6 +1299,19 @@ CREATE TABLE `notatnik` (
 -- Zrzut danych tabeli `notatnik`
 -- 
 
+-- --------------------------------------------------------
+
+-- 
+-- Struktura tabeli dla  `ogloszenia`
+--
+
+CREATE TABLE `ogloszenia` (
+  `id` int(5) NOT NULL auto_increment,
+  `autor` varchar(25) collate utf8_polish_ci NOT NULL,
+  `tytul` varchar(25) collate utf8_polish_ci NOT NULL,
+  `tresc` varchar(255) collate utf8_polish_ci NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1;
 
 -- --------------------------------------------------------
 
@@ -1887,6 +1900,7 @@ CREATE TABLE `team` (
   `function` text NOT NULL,
   `avatar` varchar(70) NOT NULL default '',
   `contact` varchar(70) NOT NULL default '',
+  `type` enum('gfx','php','head','generic help') COLLATE utf8_polish_ci NOT NULL,
   KEY `tid` (`tid`)
 ) TYPE=MyISAM AUTO_INCREMENT=1 ;
 
