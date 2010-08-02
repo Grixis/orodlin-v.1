@@ -154,8 +154,8 @@ if (!isset($_GET['step']))
 $intItem = 0;
 if ($player -> location == 'Altara')
 {
-	$objItem = $db -> Execute('SELECT `id` FROM `equipment` WHERE `name`=\''.ITEM.'\' AND `owner`='.$player -> id);
-	if (!$objItem -> fields['id'] && $_GET['step']!='ogloszenie' && $_GET['step']!='dodaj' && $_GET['step']!='list')
+	$objItem = $db -> GetRow('SELECT `id` FROM `equipment` WHERE `name`=\''.ITEM.'\' AND `owner`='.$player -> id);
+	if ($objItem == NULL && $_GET['step']!='ogloszenie' && $_GET['step']!='dodaj' && $_GET['step']!='list')
 	{
 		city();
 	} elseif (isset($_GET['del']))

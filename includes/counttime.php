@@ -78,11 +78,11 @@ function counttime()
     {
         $arrTime[1] = $intMinutes.T_MINUTE;
     }
-    if (($intMinutes > 1 && $intMinutes < 5) || ereg("^[2-5][2-4]*$", $intMinutes))
+    if (($intMinutes > 1 && $intMinutes < 5) || @ereg("^[2-5][2-4]*$", $intMinutes))
     {
         $arrTime[1] = $intMinutes.T_MINUTES2;
     }
-    if (($intMinutes > 4 && $intMinutes < 20) || ereg("^[2-5][5-9]*$", $intMinutes) || ereg("^[2-5][0-1]*$", $intMinutes))
+    if (($intMinutes > 4 && $intMinutes < 20) || @ereg("^[2-5][5-9]*$", $intMinutes) || @ereg("^[2-5][0-1]*$", $intMinutes))
     {
         $arrTime[1] = $intMinutes.T_MINUTES;
     }

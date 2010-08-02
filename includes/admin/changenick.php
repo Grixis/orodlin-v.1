@@ -38,7 +38,6 @@ $smarty -> assign(array('Info' => INFO,
                         'Reason1' => DEFAULT1,
                         'Editprofile' => EDIT_PROFILE,
                         'Edit' => EDIT,
-                        'Saveprofile' => SAVE_PROFILE,
                         'Reason2' => DEFAULT2,
                         'Reason3' =>DEFAULT3,
                         'Setid' => SET_ID,
@@ -90,7 +89,7 @@ if (isset($_GET['action']))
     }
     if ($_GET['action'] == 'profile')
     {
-        $objProfile = $db -> Execute('SELECT `user`, `profile` from `players` WHERE `id`='.$_POST['id']);
+        $objProfile = $db -> Execute('SELECT `user`, `profile` FROM `players` WHERE `id`='.$_POST['id']);
         require_once('includes/bbcode.php');
         $strProfile = htmltobbcode($objProfile -> fields['profile']);
         $smarty -> assign(array('Currentinfo' => CURRENTINFO,
@@ -98,11 +97,11 @@ if (isset($_GET['action']))
                                 'VictimID' => $_POST['id'],
                                 'Current' => $objProfile -> fields['profile'],
                                 'Editable' =>$strProfile));
-        if (!empty($_POST['profile']))
+        if (isset($_GET['action2']) && $_GET['action2'] == 'edit')
         {
-            $_POST['profile'] = bbcodetohtml($_POST['profile']);
-            $strProfile = $db -> qstr($_POST['profile'], get_magic_quotes_gpc());
-            $db -> Execute('UPDATE `players` SET `profile` = '.$strProfile.' WHERE `id` = '.$_POST['id']);
+            $_POST['editedprofile'] = bbcodetohtml($_POST['editedprofile']);
+            $strProfile = $db -> qstr($_POST['editedprofile'], get_magic_quotes_gpc());
+            $db -> Execute('UPDATE `players` SET `profile` ='.$strProfile.' WHERE `id` = '.$_POST['id']);
             $db -> Execute('INSERT INTO `log` (`owner`, `log`, `czas`) VALUES('.$_POST['id'].',\''.YOUR_PROFILE_WAS_CHANGED_BY.' <b><a href="view.php?view='.$player -> id .'">'.$player -> user.'</a></b>, ID <b>'.$player -> id.'</b>. '.CHANGE_REASON.':  '.$_POST['reason'].'\','.$db -> DBDate($newdate).')');
             error (YOU_CHANGED_PROFILE.' <b><a href="view.php?view='.$_POST['id'].'">'.$objProfile -> fields['user'].'</a></b>, ID <b>'.$_POST['id'].'</b>.');
         }

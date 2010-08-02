@@ -147,8 +147,8 @@
     {else}
         <p>{$Currentinfo} <b><a href="view.php?view={$VictimID}">{$Victimname}</a></b>:</p>
         <p>{$Current}</p>
-        <form method="post" action="staff.php?view=changenick&amp;action=profile">
-            <textarea name="profile" rows="15" cols="50">{$Editable}</textarea>
+        <form method="post" action="staff.php?view=changenick&amp;action=profile&amp;action2=edit">
+            <textarea name="editedprofile" rows="15" cols="50">{$Editable}</textarea>
             <p>{$Changereason}:</p><textarea name="reason" rows="5" cols="50">{$Reason2} {$Reason3}</textarea><br />
             <input type="hidden" name="id" value="{$VictimID}" />
             <input type="submit" value="{$Save}" />
