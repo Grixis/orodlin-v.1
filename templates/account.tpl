@@ -297,7 +297,7 @@
     {$head_text}
 <div id="signatures">
 {section name=type loop=$Types}
-    <div class="center"><a href="{$GameAddress}"><img class="sigs" src="{$GameAddress}/sign.php?type={$Types[type]}&amp;id={$pid}" alt="" /></a></div><br />
+    <div class="center"><a href="{$GameAddress}"><img class="sigs" src="http://{$GameAddress}/sign.php?type={$Types[type]}&amp;id={$pid}" alt="" /></a></div><br />
     <input id="{$Types[type]}-1" readonly="readonly" size="55" value="[URL={$GameAddress}][IMG]{$GameAddress}/sign.php?type={$Types[type]}&amp;id={$pid}[/IMG][/URL]" /><label for="{$Types[type]}-1">BBCode(1)</label><br />
     <input id="{$Types[type]}-2" readonly="readonly" size="55" value="[url={$GameAddress}][img={$GameAddress}/sign.php?type={$Types[type]}&amp;id={$pid}][/url]" /><label for="{$Types[type]}-2">BBCode(2)</label><br />
     <input id="{$Types[type]}-3" readonly="readonly" size="55" value="<a href=&quot;{$GameAddress}&quot;><img src=&quot;{$GameAddress}/sign.php?type={$Types[type]}&amp;id={$pid}&quot; border=&quot;0&quot; alt=&quot;&quot; /></a>" /><label for="{$Types[type]}-3">HTML</label><br />
