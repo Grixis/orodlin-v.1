@@ -272,15 +272,8 @@ else
   {
     $iPlayerTime = 0;
   }
-  if(isset($oUserAction -> fields['time']))
-  {
-    $db -> Execute('UPDATE chat_users SET time = '.$time.' WHERE userid = '.$player['id'].' AND room='.$room) or die($db -> ErrorMsg());
-  }
-  else
-  {
-    $db -> Execute('INSERT INTO chat_users(userid, time, room) VALUES('.$player['id'].', '.$time.', '.$room.')') or die($db -> ErrorMsg());
-  }
-
+  $db -> Execute('INSERT INTO `chat_users`(`userid`, `time`, `room`) VALUES(?,?,?) ON DUPLICATE KEY UPDATE `time`='.$time.', `room`='.$room.'', array($player['id'],$time,$room));
+	
 
 
 /*
