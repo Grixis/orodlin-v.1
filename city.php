@@ -172,7 +172,7 @@ if ($player -> location == 'Altara')
 	} else {
 		nubiaquest();
 	}
-	$objItem -> Close();
+	if ($objItem != NULL) $objItem -> Close();
 } elseif ($player -> location == 'Ardulith') {
 	if ($_GET['step']=='') {
 		city();
