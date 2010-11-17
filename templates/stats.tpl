@@ -1,6 +1,6 @@
 {strip}
 {$Statsinfo}<br /><br />
-{$Avatar}<br />
+<center>{$Avatar}</center><br />
 {if $Action == "gender"}
     <form method="post" action="stats.php?action=gender&amp;step=gender">
     <select name="gender"><option value="M">{$Genderm}</option>

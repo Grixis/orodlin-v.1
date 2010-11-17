@@ -41,16 +41,7 @@ require_once("languages/".$player -> lang."/stats.php");
 /**
 * Assign variables to template
 */
-$smarty -> assign(array("Avatar" => '', 
-                        "Crime" => ''));
-
-$plik = 'avatars/'.$player -> avatar;
-if (is_file($plik)) 
-{
-    require_once('includes/avatars.php');
-    $arrImage = scaleavatar($plik);
-    $smarty -> assign("Avatar", "<center><img src=\"".$plik."\" width=\"".$arrImage[0]."\" height=\"".$arrImage[1]."\" alt=\"".$player -> user."\" title=\"".$player -> user."\" /></center>");
-}
+$smarty -> assign(array("Crime" => ''));
 
 if ($player -> ap > 0 || $player -> age < 4) 
 {

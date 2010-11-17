@@ -67,7 +67,7 @@ $page = (int)$_GET['page'] * $limit;
 $sql = "SELECT `players`.`id`, `user`, `rank`, `tribe`, `tribe_rank`, `opis`, `gender`";
 if ($player[1])
 {
-	$sql .= ", sum(`reputation`.`points`), `miejsce`, `page`, `rasa`, `hp`";
+	$sql .= ", sum(`reputation`.`points`), `miejsce`, `page`, `rasa`, `hp`, `avatar`";
 }
 $sql2 = " FROM `players`";
 $sql3 = " LEFT JOIN `reputation` ON `reputation`.`player_id` = `players`.`id`";
@@ -136,6 +136,8 @@ for ($i = 0, $intMax = count($arrPlayers), $arrPlayers2 = array(); $i < $intMax;
 		$arrPlayers2[$i]['hp'] = ($arrPlayers[$i][11] > 0)? 1 : 0;
 		//gender
 		$arrPlayers2[$i]['gender'] = $arrPlayers[$i][6];
+		//avatar
+		$arrPlayers2[$i]['avatar'] = $arrPlayers[$i][12];
 	}
 }
 unset($arrPlayers, $arrRankImages);

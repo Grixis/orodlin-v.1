@@ -58,7 +58,7 @@ if (empty ($view -> id))
 }
 $smarty -> assign (array('User' => getTaggedPlayerName ($view -> user, $view->tribe, $view->tribe_rank),
                          'Id' => $view -> id,
-                         'Avatar' => '',
+                         'ViewerAvatar' => '',
                          'GG' => '',
                          'Immu' => '',
                          'Attack' => '',
@@ -72,9 +72,7 @@ $smarty -> assign (array('User' => getTaggedPlayerName ($view -> user, $view->tr
 $plik = 'avatars/'.$view -> avatar;
 if (is_file($plik))
 {
-    require_once('includes/avatars.php');
-    $arrImage = scaleavatar($plik);
-    $smarty -> assign ('Avatar', '<center><img src="'.$plik.'" width="'.$arrImage[0].'" height="'.$arrImage[1].'" /></center>');
+    $smarty -> assign ('ViewerAvatar', $plik);
 }
 if (!empty($view -> gg))
 {

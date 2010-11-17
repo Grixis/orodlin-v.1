@@ -1,6 +1,6 @@
 {strip}
 <center><b><u>{$User}</u></b> ({$Id})</center><br />
-{$Avatar}
+<center><img src="{$ViewerAvatar}" alt="" /></center><br />
 {if $ViewerRank == 'Admin' || $ViewerRank == 'Staff'}
     <p>{$Timeinfo} {$Time}<br />{$PlayerIP}<a href="memberlist.php?ip={$IP}">{$IP}</a></p>
 {/if}

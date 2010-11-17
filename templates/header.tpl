@@ -55,6 +55,11 @@
                     <div id="stats">
                 {if $Graphstyle == "Y" && $Graphic == "default"}<div class="imghead"><img src="" alt="img_Statystyki" width="91" height="19" /></div>{else}<div class="txtheader">{$smarty.const.N_STATISTICS}</div>{/if}
                             <center><b>{$Name}</b> ({$Id})</center><br />
+                            {if $Graphstyle == "Y" && $Avatar != ''}
+								<a href="account.php?view=avatar">
+									<img src="{$Avatar}" alt="" width="{$A_width}px" height="{$A_height}px" /><br />
+								</a>
+							{/if}
                             <div class="menuleft">{if $Graphstyle == "Y"}<img src="" alt="img_level" class="vmiddle" width="16" height="16" />{/if}<b>{$smarty.const.LEVEL}:</b> {$Level}</div>
                             <div class="menuleft">{if $Graphstyle == "Y"}<img src="" alt="img_exp" class="vmiddle" width="16" height="16" />{/if}<b>{$smarty.const.EXP_PTS}:</b> {$Exp}/{$Expneed} ({$Percent}%)</div>
                             {if $Graphbar == "Y"}

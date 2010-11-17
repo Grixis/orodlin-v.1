@@ -186,7 +186,7 @@ class Player
         /// Dirtyhack: fight
         global $db;
         $db -> Execute('UPDATE `players` SET `lpv`='.time().', `ip`=\''.$_SERVER['REMOTE_ADDR'].'\', `page`=\''.$strTitle.'\' WHERE `email`=\''.$strEmail.'\'');
-        $stats = $db -> Execute('SELECT `id`, `user`, `lang`, `rank`, `level`, `exp`, `energy`, `max_energy`, `hp`, `max_hp`, `pm`, `credits`, `bank`, `platinum`, `tribe`, `tribe_rank`, `miejsce`, `style`, `graphic`, `graphbar`, `graphstyle`, `inteli`, `wisdom`, `fight`, `rasa`, `klasa`, `deity`, `gender`, `overlib`, `mailinfo`, `loginfo` FROM `players` WHERE `email`=\''.$strEmail.'\'');
+        $stats = $db -> Execute('SELECT `id`, `user`, `lang`, `rank`, `level`, `exp`, `energy`, `max_energy`, `hp`, `max_hp`, `pm`, `credits`, `bank`, `platinum`, `tribe`, `tribe_rank`, `miejsce`, `style`, `graphic`, `graphbar`, `graphstyle`, `inteli`, `wisdom`, `fight`, `rasa`, `klasa`, `deity`, `gender`, `overlib`, `mailinfo`, `loginfo`, `avatar` FROM `players` WHERE `email`=\''.$strEmail.'\'');
         $this -> id = $stats -> fields['id'];
         $this -> user = $stats -> fields['user'];
         $this -> lang = $stats -> fields['lang'];
@@ -222,7 +222,7 @@ class Player
         $this -> overlib = $stats -> fields['overlib'];
         $this -> mailinfo = $stats -> fields['mailinfo'];
         $this -> loginfo = $stats -> fields['loginfo'];
-
+		$this -> avatar = $stats -> fields['avatar'];
         $stats -> Close();
     }
 

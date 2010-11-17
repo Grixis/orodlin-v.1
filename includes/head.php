@@ -269,6 +269,21 @@ if ($player -> graphbar == 'Y')
 }
 
 /**
+ * Avatar
+ */
+$smarty -> assign(array('Avatar' => ''));
+
+$plik = 'avatars/'.$player -> avatar;
+if (is_file($plik))
+{
+    require_once('includes/avatars.php');
+    $arrImage = scaleavatar($plik);
+    $smarty -> assign(array("Avatar" => $plik,
+							"A_width" => $arrImage[0],
+							"A_height" => $arrImage[1]));
+}
+
+/**
  * Style rotation depending on location.
  */
 if ($player -> style == 'orodlin.css')

@@ -167,7 +167,7 @@
 {if $View == "avatar"}
     {$Avatarinfo}<br /><br />
     {if $Avatar != ""}
-    <center><br /><br /><img alt="img_avatar" src="{$Avatar}" width="100" heigth="100">
+    <center><br /><br /><img alt="img_avatar" src="{$Avatar}">
       <form action="account.php?view=avatar&amp;step=usun" method="post">
     <input type="hidden" name="av" value="{$Value}" />
     <input type="submit" value="{$Delete}" /></form></center>

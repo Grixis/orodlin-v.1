@@ -199,10 +199,14 @@ function setListResponse(json)
 			opis = opis.replace(/</gi,"&lt;");
 			opis = opis.replace(/>/gi,"&gt;");
 			opis = opis.replace(/"/gi,"&quot;");
+			if (json.players[xuser].avatar != "")
+            {
+                json.players[xuser].avatar = '<img src=&quot;avatars/'+json.players[xuser].avatar+'&quot; style=&quot;max-width:190px; max-height:150px;&quot; />';
+            }
 			json.players[xuser].name = json.players[xuser].name.replace(/'/gi,"&#39;");
 			gender = (json.players[xuser].gender == 'M') ? "{/literal}{$smarty.const.OVERLIB_GENDER_M}{literal}" : "{/literal}{$smarty.const.OVERLIB_GENDER_F}{literal}" ;
 			hpstatus = (json.players[xuser].hp > 0) ? "{/literal}{$smarty.const.OVERLIB_STATUS_A}{literal}" : "{/literal}{$smarty.const.OVERLIB_STATUS_D}{literal}" ;
-			$('#memberlist').append(json.players[xuser].rankIcon+'<a onmouseover="overlib(&#39;<p style=&quot;text-align:left;&quot;><br/>'+racetext+': '+json.players[xuser].rasa+'<br/> '+gendertext+': '+gender+'<br/> '+statustext+': '+hpstatus+'<br/> '+ranktext+': '+json.players[xuser].rankName+'<br /> '+reputationtext+': '+json.players[xuser].reputation+'<br /> '+opistext+': '+ opis+'<br /> '+lastseentext+': '+json.players[xuser].place+'</p>&#39;, CAPTION, &#39;<b>'+json.players[xuser].name.replace(/&#39;/gi,"&amp;#39;")+'</b>&#39; , FGCOLOR, &#39;black&#39;, BGCOLOR, &#39;#0C1115&#39;, TEXTCOLOR, &#39;#FFFFFF&#39;, LEFT, 1, CAPTIONSIZE, 1, BORDER, 1, TEXTSIZE, 1, STATUS, &#39;'+json.players[xuser].rankName+'\&#39;)" onmouseout="nd();" href="view.php?view='+json.players[xuser].id+'">'+json.players[xuser].name+'</a> <span style="color: #8C8C8C;">'+json.players[xuser].id+'</span><br/>');
+			$('#memberlist').append(json.players[xuser].rankIcon+'<a onmouseover="overlib(&#39;<center>'+json.players[xuser].avatar+'</center><p style=&quot;text-align:left;&quot;><br/>'+racetext+': '+json.players[xuser].rasa+'<br/> '+gendertext+': '+gender+'<br/> '+statustext+': '+hpstatus+'<br/> '+ranktext+': '+json.players[xuser].rankName+'<br /> '+reputationtext+': '+json.players[xuser].reputation+'<br /> '+opistext+': '+ opis+'<br /> '+lastseentext+': '+json.players[xuser].place+'</p>&#39;, CAPTION, &#39;<b>'+json.players[xuser].name.replace(/&#39;/gi,"&amp;#39;")+'</b>&#39; , FGCOLOR, &#39;black&#39;, BGCOLOR, &#39;#0C1115&#39;, TEXTCOLOR, &#39;#FFFFFF&#39;, LEFT, 1, CAPTIONSIZE, 1, BORDER, 1, TEXTSIZE, 1, STATUS, &#39;'+json.players[xuser].rankName+'\&#39;)" onmouseout="nd();" href="view.php?view='+json.players[xuser].id+'">'+json.players[xuser].name+'</a> <span style="color: #8C8C8C;">'+json.players[xuser].id+'</span><br/>');
 			if (opisinlist == 1)
 			{
 				$('#memberlist').append('<span style="color: #8C8C8C;">'+json.players[xuser].opis+'</span><br/>');
