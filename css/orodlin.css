@@ -1,0 +1,43 @@
+body {
+	background: #000000;
+    color: #C5C35F;
+}
+
+* {
+
+	font-family: Verdana;
+	font-size: 9pt;
+}
+
+fieldset {
+	border: 1px solid;
+}
+
+input, textarea, select {
+  	color: #CAB8AF;
+  	background: #1A1A1A;
+  	border: 1px solid #404040;
+  	margin-left: 10px;
+	margin: 1px;
+}
+
+input:hover, textarea:hover, select:hover, input:focus, textarea:focus, select:focus {
+	background: #262626;
+	color: #DED3CE;
+}
+
+
+a {
+  	color: #B4A07E;
+  	font-weight: bold;
+  	text-decoration: none;
+}
+
+a:hover {
+  	text-decoration: none;
+  	color: #CB8657;
+}
+
+.forum {
+    color: #C5C35F;
+}
