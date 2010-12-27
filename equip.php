@@ -345,6 +345,10 @@ if (isset($_GET['sell']))
         $sell -> fields['cost'] = ceil($costone * $sell -> fields['wt']);
         $db -> Execute("DELETE FROM `equipment` WHERE `id`=".$sell -> fields['id']);
     }
+    if ($sell ->fields['status'] == 'R')
+    {
+        error (NOT_YOUR);
+    }
     $db -> Execute("UPDATE `players` SET `credits`=`credits`+".$sell -> fields['cost']." WHERE `id`=".$player -> id);
     $amount = $sell -> fields['amount'] - 1;
     if ($amount > 0)

@@ -939,15 +939,22 @@ if (isset ($_GET['action']) && $_GET['action'] == 'my')
          */
         if (isset ($_GET['take'])) 
         {
-            if (!isset($_GET['step3'])) 
+			if (!isset($_GET['step3']))
             {
-                $name = $db -> Execute("SELECT * FROM equipment WHERE id=".$_GET['take']);
-                $smarty -> assign(array("Id" => $_GET['take'], 
-                    "Amount" => $name -> fields['amount'], 
-                    "Name" => $name -> fields['name'],
-                    "Fromh" => FROM_H,
-                    "Amount2" => AMOUNT2));
-                $name -> Close();
+				$name = $db -> Execute("SELECT * FROM equipment WHERE id=".$_GET['take']);
+				if ($name ->fields['status'] == 'R')
+				{
+					error (NOT_YOUR);
+				}
+				else
+				{
+					$smarty -> assign(array("Id" => $_GET['take'],
+						"Amount" => $name -> fields['amount'],
+						"Name" => $name -> fields['name'],
+						"Fromh" => FROM_H,
+						"Amount2" => AMOUNT2));
+					$name -> Close();
+				}
             }
             if (isset($_GET['step3']) && $_GET['step3'] == 'add') 
             {
