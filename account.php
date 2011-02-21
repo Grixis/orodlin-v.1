@@ -725,12 +725,13 @@ if (isset($_GET['view']) && $_GET['view'] == "profile")
 */
 if (isset($_GET['view']) && $_GET['view'] == 'eci')
 {
-	$arrComname = array(COMM1, COMM2, COMM3, T_DELETE);
-	$arrComlink = array(COMLINK1, COMLINK2, COMLINK3, T_DELETE);
+	$arrComname = array(COMM1, COMM2, COMM3, COMM4);
+	$arrComlink = array(COMLINK1, COMLINK2, COMLINK3, COMLINK4);
 	$smarty -> assign(array("Oldemail" => OLD_EMAIL,
 							"Newemail" => NEW_EMAIL,
 							"Newgg" => NEW_GG,
 							"Change" => CHANGE,
+							"Delete" => DELETE,
 							"Tcommunicator" => T_COMMUNICATOR,
 							"Tcom" => $arrComname,
 							"Comm" => $arrComlink));
@@ -742,15 +743,17 @@ if (isset($_GET['view']) && $_GET['view'] == 'eci')
 	{
 		$_POST['gg'] = str_replace("'", "", strip_tags($_POST['gg']));
 		$intKey = array_search($_POST['communicator'], $arrComlink);
-		if ($intKey === 0)
+		
+		if($_POST['Change'])
 		{
-			if (!ereg("^[1-9][0-9]*$", $_POST['gg']))
+			if ($intKey === 0)
 			{
-				error(ERROR);
+				if (!ereg("^[1-9][0-9]*$", $_POST['gg']))
+				{
+					error(ERROR);
+				}
 			}
-		}
-		if ($intKey < 3)
-		{
+			
 			if (empty($_POST['gg']))
 			{
 				error(EMPTY_FIELDS);
@@ -763,20 +766,27 @@ if (isset($_GET['view']) && $_GET['view'] == 'eci')
 			{
 				error(GG_BLOCK);
 			}
-		}
-			else
-		{
-			$strCom = '';
-		}
-		$db -> Execute("UPDATE `players` SET `gg`='".$strCom."' WHERE `id`=".$player -> id) or error(E_DB);
-		if ($intKey < 3)
-		{
+			
+			$db -> Execute("UPDATE `players` SET `".$arrComname[$intKey]."`='".$strCom."' WHERE `id`=".$player -> id) or error(E_DB);
 			error(YOU_CHANGE.$arrComname[$intKey].".");
+				
+			
 		}
-			else
+		else if ($_POST['Delete'])
 		{
-			error(YOU_DELETE);
+		
+		$db -> Execute("UPDATE `players` SET `".$arrComname[$intKey]."`='' WHERE `id`=".$player -> id) or error(E_DB);
+		error(YOU_DELETE);
 		}
+		
+	}
+	if (isset($_GET['step']) && $_GET['step'] == "delete")
+	{
+		$_POST['gg'] = str_replace("'", "", strip_tags($_POST['gg']));
+		$intKey = array_search($_POST['communicator'], $arrComlink);
+		
+		$db -> Execute("UPDATE `players` SET `".$arrComname[$intKey]."`='jabberaa' WHERE `id`=".$player -> id) or error(E_DB);
+		error(YOU_DELETE);
 	}
 
 	/**

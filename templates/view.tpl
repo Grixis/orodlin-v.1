@@ -5,6 +5,10 @@
     <p>{$Timeinfo} {$Time}<br />{$PlayerIP}<a href="memberlist.php?ip={$IP}">{$IP}</a></p>
 {/if}
 {$GG}
+{$JABBER}
+{$TLEN}
+{$SKYPE}
+
 <b>{$Tfreezed}</b>
 {$smarty.const.T_LANG}: {$Lang}<br />
 {$Tseclang}

@@ -60,6 +60,9 @@ $smarty -> assign (array('User' => getTaggedPlayerName ($view -> user, $view->tr
                          'Id' => $view -> id,
                          'ViewerAvatar' => '',
                          'GG' => '',
+						 'JABBER' => '',
+						 'TLEN' => '',
+						 'SKYPE' => '',
                          'Immu' => '',
                          'Attack' => '',
                          'Mail' => '',
@@ -74,10 +77,29 @@ if (is_file($plik))
 {
     $smarty -> assign ('ViewerAvatar', $plik);
 }
+
+
+if (!empty($view -> jabber))
+{
+    $smarty -> assign ('JABBER', GG_NUMBER.$view -> jabber.'<br />');
+}
+
+if (!empty($view -> tlen))
+{
+    $smarty -> assign ('TLEN', GG_NUMBER.$view -> tlen.'<br />');
+}
+
 if (!empty($view -> gg))
 {
     $smarty -> assign ('GG', GG_NUMBER.$view -> gg.'<br />');
 }
+
+if (!empty($view -> skype))
+{
+    $smarty -> assign ('SKYPE', GG_NUMBER.$view -> skype.'<br />');
+}
+
+
 
 /**
  * Select player rank

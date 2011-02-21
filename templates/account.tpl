@@ -229,7 +229,8 @@
         {/section}
     </select></td></tr>
     <tr><td>{$Newgg}:</td><td><input type="text" name="gg" /></td></tr>
-    <tr><td colspan="2" align="center"><input type="submit" value="{$Change}" /></td></tr>
+    <tr><td colspan="2" align="center"><input type="submit" name="Change" value="{$Change}" />
+	<input type="submit" name="Delete" value="{$Delete}" /></td></tr>
    </table>
    </form>
 {/if}
