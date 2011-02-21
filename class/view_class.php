@@ -20,6 +20,9 @@ class ViewPlayer
     var $seclang;
     var $avatar;
     var $gg;
+	var $jabber;
+	var $tlen;
+	var $skype;
     var $rank;
     var $gender;
     var $immunited;
@@ -54,7 +57,7 @@ class ViewPlayer
     function ViewPlayer($pid)
     {
         global $db;
-        $stats = $db -> Execute('SELECT `id`, `user`, `level`, `lang`, `seclang`, `avatar`, `gg`, `rank`, `gender`, `immu`, `age`, `rasa`, `klasa`, `hp`, `max_hp`, `wins`, `losses`, `lastkilled`, `lastkilledby`, `profile`, `deity`, `tribe`, `tribe_rank`, `refs`, `page`, `credits`, `miejsce`, `ip`, `lpv` FROM `players` WHERE `id`='.$pid);
+        $stats = $db -> Execute('SELECT `id`, `user`, `level`, `lang`, `seclang`, `avatar`, `gg`,`jabber`,`tlen`,`skype`, `rank`, `gender`, `immu`, `age`, `rasa`, `klasa`, `hp`, `max_hp`, `wins`, `losses`, `lastkilled`, `lastkilledby`, `profile`, `deity`, `tribe`, `tribe_rank`, `refs`, `page`, `credits`, `miejsce`, `ip`, `lpv` FROM `players` WHERE `id`='.$pid);
         $this -> id = $stats -> fields['id'];
         $this -> user = $stats -> fields['user'];
         $this -> level = $stats -> fields['level'];
@@ -62,6 +65,9 @@ class ViewPlayer
         $this -> seclang = $stats -> fields['seclang'];
         $this -> avatar = $stats -> fields['avatar'];
         $this -> gg = $stats -> fields['gg'];
+		$this -> jabber = $stats -> fields['jabber'];
+		$this -> tlen = $stats -> fields['tlen'];
+		$this -> skype = $stats -> fields['skype'];
         $this -> rank = $stats -> fields['rank'];
         $this -> gender = $stats -> fields['gender'];
         $this -> immunited = $stats -> fields['immu'];

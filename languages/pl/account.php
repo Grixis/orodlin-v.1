@@ -43,6 +43,7 @@ define('A_IMMU', 'Immunitet');
 define('A_STYLE', 'Dostosuj wygląd gry');
 define('A_LANG', 'Wybierz język gry');
 define('CHANGE', 'Zmień');
+define('DELETE', 'Usuń');
 define('A_FREEZE', 'Zamrożenie konta');
 define('A_OPTIONS', 'Dodatkowe opcje');
 define('A_CHANGES', 'Ostatnie zmiany');
@@ -227,12 +228,14 @@ if (isset($_GET['view']) && $_GET['view'] == 'eci')
     define('OLD_EMAIL', 'Obecny adres e-mail');
     define('NEW_EMAIL', 'Nowy adres e-mail');
     define('NEW_GG', 'Identyfikator');
-    define('COMM1', 'Gadu-Gadu');
+    define('COMM1', 'GG');
     define('COMM2', 'Tlen');
     define('COMM3', 'Jabber');
+	define('COMM4', 'Skype');
     define('COMLINK1', 'gg:');
     define('COMLINK2', 'http://ludzie.tlen.pl/');
     define('COMLINK3', 'xmpp:');
+	define('COMLINK4', 'skype:');
     define('T_COMMUNICATOR', 'Komunikator');
     define('T_DELETE', 'Usuń');
     if (isset($_GET['step']) && $_GET['step'] == 'gg')
