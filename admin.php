@@ -605,26 +605,8 @@ if (isset($_GET['view']) && $_GET['view'] == 'poll')
 {
     if (!isset($_GET['step']))
     {
-        $path = 'languages/';
-        $dir = opendir($path);
-        $arrLanguage = array();
-        $i = 0;
-        while ($file = readdir($dir))
-        {
-            if (!ereg(".htm*$", $file))
-            {
-                if (!ereg("\.$", $file))
-                {
-                    $arrLanguage[$i] = $file;
-                    $i = $i + 1;
-                }
-            }
-        }
-        closedir($dir);
         $smarty -> assign(array("Tamount" => T_AMOUNT,
             "Anext" => A_NEXT,
-            "Tlang" => T_LANG,
-            "Llang" => $arrLanguage,
             "Tdays" => T_DAYS));
     }
     $smarty -> assign("Tquestion", T_QUESTION);
@@ -664,7 +646,18 @@ if (isset($_GET['view']) && $_GET['view'] == 'poll')
         $db -> Execute("UPDATE polls SET members=".$intMembers." WHERE id=".$objPollid -> fields['id']." AND votes=-1");
         $objPollid -> Close();
         $strQuestion = $db -> qstr($_POST['question'], get_magic_quotes_gpc());
-        $db -> Execute("INSERT INTO polls (id, poll, votes, lang, days) VALUES(".$intId.", ".$strQuestion.", -1, '".$_POST['lang']."', ".$_POST['days'].")") or $db -> ErrorMsg();
+        $db -> Execute("INSERT INTO polls (id, poll, votes, days) VALUES(".$intId.", ".$strQuestion.", -1, ".$_POST['days'].")") or $db -> ErrorMsg();
+        /**
+         * Add log about new poll
+         */
+        //TODO logi nie wiadomości
+        $playersList = $db -> Execute("SELECT id FROM players");
+        while (!$playersList -> EOF)
+        {
+            $db -> Execute('INSERT INTO `log` (`owner`, `log`, `czas`) VALUES('.$playersList -> fields['id'].',\''.NEW_POLL_MESSANGE.'\','.$db -> DBDate($newdate).')');
+            $playersList -> MoveNext();
+        }
+        $playersList -> Close();
         $smarty -> assign(array("Answers" => $arrAnswers,
             "Question" => $_POST['question'],
             "Amount" => $_POST['amount'],
@@ -687,7 +680,7 @@ if (isset($_GET['view']) && $_GET['view'] == 'poll')
                 error(EMPTY_FIELDS);
             }
             $strAnswer = $db -> qstr($_POST[$strName], get_magic_quotes_gpc());
-            $db -> Execute("INSERT INTO polls (id, poll, lang) VALUES(".$_POST['pid'].", ".$strAnswer.", '".$_POST['lang']."')");
+            $db -> Execute("INSERT INTO polls (id, poll) VALUES(".$_POST['pid'].", ".$strAnswer.")");
         }
         $db -> Execute("UPDATE players SET poll='N'");
         $db -> Execute("UPDATE settings SET value='Y' WHERE setting='poll'");
