@@ -60,6 +60,15 @@ $time = date("H:i:s");
 require_once ('last.php');
 $last = eyeLastRegistered();
 
+/**
+* Last poll
+*/
+$lastPoll = $db->GetRow('SELECT `poll`, `days` FROM `polls` WHERE `votes` < 0 ORDER BY `id` DESC LIMIT 1');
+if ($player -> poll == 'Y' OR $lastPoll[1] <= 0) // czy gracz już głosował, czy ankieta jest aktywna
+        {
+            $lastPoll= ''; //nie ma ankiety do głosowania
+        }
+
 $db -> LogSQL(false);
 list($a_dec, $a_sec) = explode(' ', $start_time);
 list($b_dec, $b_sec) = explode(' ', microtime());
@@ -92,6 +101,7 @@ $smarty -> assign(array('Players' => $arrCount[0],
                         'Loginfo' => $player -> loginfo,
                         'LastID' => $last[0],
                         'LastName' => $last[1],
+                        'LastPollMenu' =>  $lastPoll[0],
                         'Duration' => $duration,
                         'Compress' => $comp,
                         'Sqltime' => $sqltime,
@@ -101,7 +111,8 @@ $smarty -> assign(array('Players' => $arrCount[0],
                         'Tday' => $arrDay[0],
                         'Thours' => $arrTime[0],
                         'Tminutes' => $arrTime[1],
-                        'Time' => $time));
+                        'Time' => $time
+                        ));
 
 $smarty -> display ('footer.tpl');
 
