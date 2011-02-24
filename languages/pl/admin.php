@@ -287,8 +287,8 @@ if (isset($_GET['view']) && $_GET['view'] == 'poll')
     define('T_AMOUNT', 'Ilość odpowiedzi');
     define('T_ANSWER', 'Odpowiedź');
     define('POLL_ADDED', 'Ankieta dodana');
-    define('T_LANG', 'Język');
     define('T_DAYS', 'Czas trwania (dni)');
+    define('NEW_POLL_MESSANGE', 'Spełnij swój obywatelski obowiązek i zagłosuj w nowej ankiecie.<br /> Aby zagłosować przejdź do <a href="polls.php">Hali Zgromadzeń.</a>');
 }
 
 if (isset($_GET['view']) && $_GET['view'] == 'censorship')
