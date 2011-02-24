@@ -55,7 +55,10 @@
                         <td width="50%" align="center"><a class="list" href="" onclick="nextpage();">&gt;&gt;</a></td>
                         </tr>
                         <tr><th colspan="2" align="center"><a class="list" href="" onclick="show();">{$smarty.const.SHOW_OPIS}</a></th></tr></table>
-                        </div>
+                        </div><br />
+                        {if $LastPollMenu != ''} {$smarty.const.LAST_POLL_MENU}<br />
+                        <a href="polls.php">{$LastPollMenu}</a> <br /><br />
+                        {/if}
                         {$smarty.const.LAST_REGISTERED_PRE} <a href="view.php?view={$LastID}">{$LastName}</a> ({$LastID}).
                     </div>
                     <div class="bottommenu"></div>
