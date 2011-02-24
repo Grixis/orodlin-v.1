@@ -279,26 +279,20 @@
 {if $View == "poll"}
     {if $Step == ""}
         <form method="post" action="admin.php?view=poll&amp;step=second">
-            {$Tquestion}: <input type="text" name="question" /><br />
-            {$Tlang}: <select name="lang">
-            {section name=poll2 loop=$Llang}
-                <option value="{$Llang[poll2]}">{$Llang[poll2]}</option>
-            {/section}
-            </select><br />
+            {$Tquestion}:<br /><textarea name="question" cols="60" rows="2"></textarea><br />
             {$Tamount}: <input type="text" size="5" name="amount" /><br />
             {$Tdays}: <input type="text" size="5" name="days" /><br />
             <input type="submit" value="{$Anext}" />
         </form>
     {/if}
     {if $Step == "second"}
-        {$Tquestion}: {$Question} ({$Llang}) ({$Adays} dni)<br />
+        {$Tquestion}: {$Question} ({$Adays} dni)<br />
         <form method="post" action="admin.php?view=poll&amp;step=add">
             {section name=poll loop=$Answers}
-                {$Tanswer}: <input type="text" name="{$Answers[poll]}" /><br />
+                {$Tanswer}: <input type="text" size="60" name="{$Answers[poll]}" /><br />
             {/section}
             <input type="hidden" name="amount" value="{$Amount}" />
             <input type="hidden" name="pid" value="{$Pollid}" />
-            <input type="hidden" name="lang" value="{$Llang}" />
             <input type="submit" value="{$Aadd}" />
         </form>
     {/if}
