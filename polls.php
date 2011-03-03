@@ -70,6 +70,7 @@ if (!isset($_GET['action']))
                 $strQuestion = $objPoll -> fields['poll'];
                 $intDays = $objPoll -> fields['days'];
                 $intMembers = $objPoll -> fields['members'];
+                $isAnyAnswer = false;
             }
                 else
             {
@@ -77,6 +78,7 @@ if (!isset($_GET['action']))
                 $arrVotes[$i] = $objPoll -> fields['votes'];
                 $intVotes = $intVotes + $objPoll -> fields['votes'];
                 $i++ ;
+                $isAnyAnswer = true;
             }
             $objPoll -> MoveNext();
         }
@@ -142,6 +144,7 @@ if (!isset($_GET['action']))
         $smarty -> assign(array("Pollid" => $objPollid -> fields['id'],
             "Question" => $strQuestion,
             "Answers" => $arrPoll,
+            "isAnyAnswer" => $isAnyAnswer,
             "Voting" => $strVoting,
             "Votes" => $arrVotes,
             "Summaryvotes" => $intVotes,
@@ -320,7 +323,13 @@ if (isset($_GET['action']) && $_GET['action'] == 'comments')
         deletecomments('polls_comments');
     }
 }
-
+/**
+ * Edit poll
+ */
+if ($player -> rank != 'Admin')
+{
+    error (NOT_ADMIN);
+}
 /**
 * Initialization of variable
 */
@@ -345,6 +354,7 @@ if (!isset($_GET['action']))
     }
     $smarty -> assign(array("Pollsinfo" => $strPollsinfo,
             "Nopolls" => NO_POLLS,
+            "Noanswer" => NO_ANSWER,
             "Lastpoll" => LAST_POLL,
             "Asend" => A_SEND,
             "Alast10" => A_LAST_10,
