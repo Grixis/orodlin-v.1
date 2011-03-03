@@ -13,24 +13,31 @@
                 <tr>
                     <td colspan="2"><b>{$Question}</b></td>
                 </tr>
-                {if $Voting == "Y"}
-                    <form method="post" action="polls.php?action=vote&amp;poll={$Pollid}">
+                {if $isAnyAnswer == false}
+                <tr>
+                    <td colspan="2"><b>{$Noanswer}</b></td>
+                </tr>
+                {/if}
+                {if $isAnyAnswer == true}
+                    {if $Voting == "Y"}
+                        <form method="post" action="polls.php?action=vote&amp;poll={$Pollid}">
                         {section name=poll loop=$Answers}
+                               <tr>
+                                   <td width="5%"><input type="radio" name="answer" value="{$Answers[poll]}" /></td><td>{$Answers[poll]}</td>
+                               </tr>
+                           {/section}
                             <tr>
-                                <td width="5%"><input type="radio" name="answer" value="{$Answers[poll]}" /></td><td>{$Answers[poll]}</td>
+                              <td colspan="2" align="center"><input type="submit" value="{$Asend}" /></td>
+                          </tr>
+                     </form>
+                    {/if}
+                    {if $Voting == "N"}
+                        {section name=poll2 loop=$Answers}
+                            <tr>
+                                <td width="70%">{$Answers[poll2]}</td><td> - {$Tvotes}: {$Votes[poll2]} ({$Percentvotes[poll2]} %)</td>
                             </tr>
                         {/section}
-                        <tr>
-                            <td colspan="2" align="center"><input type="submit" value="{$Asend}" /></td>
-                        </tr>
-                    </form>
-                {/if}
-                {if $Voting == "N"}
-                    {section name=poll2 loop=$Answers}
-                        <tr>
-                            <td width="70%">{$Answers[poll2]}</td><td> - {$Tvotes}: {$Votes[poll2]} ({$Percentvotes[poll2]} %)</td>
-                        </tr>
-                    {/section}
+                    {/if}
                 {/if}
                 <tr>
                     <td colspan="2">{$Sumvotes} <b>{$Summaryvotes} ({$Summaryvoting} %)</b> {$Tmembers}</td>
@@ -101,5 +108,8 @@
     </form></center>
     <br /><br />
     <a href="polls.php">{$Aback}</a>
+{/if}
+{if $Action == "edit"}
+
 {/if}
 {/strip}
