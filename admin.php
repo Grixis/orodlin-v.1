@@ -650,7 +650,6 @@ if (isset($_GET['view']) && $_GET['view'] == 'poll')
         /**
          * Add log about new poll
          */
-        //TODO logi nie wiadomości
         $playersList = $db -> Execute("SELECT id FROM players");
         while (!$playersList -> EOF)
         {
