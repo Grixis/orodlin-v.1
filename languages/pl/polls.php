@@ -48,6 +48,7 @@ if (!isset($_GET['action']))
         define('POLLS_INFO', '<p>Hala Zgromadzeń ...</p>');
     }
     define('NO_POLLS', 'Nie ma jeszcze ankiet');
+    define('NO_ANSWER', '<p>Nie ma jeszcze odpowiedzi do ankiety, wróć za chwilę.</p>');
     define('LAST_POLL', 'Oto ostatnia ankieta');
     define('A_SEND', 'Wyślij');
     define('A_LAST_10', 'Pokaż ostatnie 10 ankiet');
