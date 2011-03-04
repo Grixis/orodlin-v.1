@@ -35,7 +35,9 @@ define('A_BACK', 'Wróć');
 define('SUM_VOTES', 'Głosowało');
 define('T_MEMBERS', 'mieszkańców');
 define('A_COMMENTS', 'Komentarze');
-
+define('NO_POLLS', 'Nie ma jeszcze ankiet');
+define('POLL_DAYS', 'Ankieta potrwa jeszcze');
+define('T_DAYS', 'dni');
 if (!isset($_GET['action']))
 {
     if ($player -> location == 'Altara')
@@ -47,13 +49,10 @@ if (!isset($_GET['action']))
     {
         define('POLLS_INFO', '<p>Hala Zgromadzeń ...</p>');
     }
-    define('NO_POLLS', 'Nie ma jeszcze ankiet');
     define('NO_ANSWER', '<p>Nie ma jeszcze odpowiedzi do ankiety, wróć za chwilę.</p>');
     define('LAST_POLL', 'Oto ostatnia ankieta');
     define('A_SEND', 'Wyślij');
     define('A_LAST_10', 'Pokaż ostatnie 10 ankiet');
-    define('POLL_DAYS', 'Ankieta potrwa jeszcze');
-    define('T_DAYS', 'dni');
     define('POLL_END', 'Ankieta zakończona');
 }
 
@@ -79,5 +78,14 @@ if (isset($_GET['action']) && $_GET['action'] == 'comments')
     define('EMPTY_FIELDS', 'Wypełnij wszystkie pola!');
     define('WRITED', 'napisał(a)');
     define('NO_TEXT', 'Nie ma takiej ankiety!');
+}
+if (isset($_GET['action']) && $_GET['action'] == 'edit')
+{
+    define('POLL_EDITED', '<p><b>Ankieta została zmieniona!</b></p>');
+    define('APPLY_CHANGE', 'Zatwierdź zmiany');
+    define('EMPTY_FIELDS', 'Wypełnij wszystkie pola!');
+    define('LANG_QUESTION', 'Pytanie:');
+    define('ANSWER', 'Odpowiedź:');
+    
 }
 ?>
