@@ -326,9 +326,79 @@ if (isset($_GET['action']) && $_GET['action'] == 'comments')
 /**
  * Edit poll
  */
-if ($player -> rank != 'Admin')
-{
-    error (NOT_ADMIN);
+if (isset($_GET['action']) && $_GET['action'] == 'edit'){
+
+    if ($player -> rank != 'Admin')
+        {
+            error (NOT_ADMIN);
+        }
+    $objPoll = $db -> Execute("SELECT `poll`, `votes`, `days` FROM `polls` WHERE `id`=".$objPollid -> fields['id']);
+    $arrPoll = array();
+    $arrVotes = array();
+    $indexPoll = 0;
+    while (!$objPoll -> EOF)
+    {
+        if ($objPoll -> fields['votes'] < 0)
+        {
+            $strQuestion = $objPoll -> fields['poll'];
+            $intDays = $objPoll -> fields['days'];
+            $isAnyAnswer = false;
+        }
+        else
+        {
+            $arrPoll[$indexPoll] = $objPoll -> fields['poll'];
+            $indexPoll++ ;
+            $isAnyAnswer = true;
+        }
+        $objPoll -> MoveNext();
+    }
+    $smarty -> assign(array("Pollid" => $objPollid -> fields['id'],
+        "Question" => $strQuestion,
+        "Answers" => $arrPoll,
+        "isAnyAnswer" => $isAnyAnswer,
+        "Days" => $intDays,
+        "Amount" => $indexPoll,
+        "LangQuestion" => LANG_QUESTION,
+        "Answer" => ANSWER,
+        "ApplyChange" => APPLY_CHANGE));
+
+    if (isset($_GET['step']) && $_GET['step'] == 'Apply') {
+
+
+        if (empty($_POST['question']) || empty($_POST['amount']) || empty($_POST['days']))
+        {
+            error(EMPTY_FIELDS);
+        }
+        if (!ereg("^[1-9][0-9]*$", $_POST['amount']) || !ereg("^[1-9][0-9]*$", $_POST['days']))
+        {
+            error(ERROR);
+        }
+        
+        $intPid = $db -> qstr($_POST['pid'], get_magic_quotes_gpc());
+        $strQuestion = $db -> qstr($_POST['question'], get_magic_quotes_gpc());
+        $intDays = $db -> qstr($_POST['days'], get_magic_quotes_gpc());
+
+        $db -> Execute("UPDATE `polls` SET `poll`=".$strQuestion.", `days`=".$intDays." WHERE `id`=".$intPid." AND `votes` < 0");
+
+        for($i = 0; $i < $_POST['amount']; $i++)
+        {
+            $strName = "answer".$i;
+            if (empty($_POST[$strName]))
+            {
+                error(EMPTY_FIELDS);
+            }
+            $answers[$i] = $_POST[$strName];
+            $strAnswer = $db -> qstr($_POST[$strName], get_magic_quotes_gpc());
+            
+            $db -> Execute("UPDATE `polls` SET `poll`=".$strAnswer." WHERE `id`=".$intPid." AND `poll`='".$arrPoll[$i]."'");
+        }
+
+        
+        $smarty -> assign(array("Message" => POLL_EDITED,
+            "Answers" => $answers,
+            "Days" => $_POST['days'],
+            "Question" => $_POST['question']));
+    }
 }
 /**
 * Initialization of variable
@@ -352,14 +422,11 @@ if (!isset($_GET['action']))
     {
         $strPollsinfo = POLLS_INFO;
     }
-    $smarty -> assign(array("Pollsinfo" => $strPollsinfo,
-            "Nopolls" => NO_POLLS,
+    $smarty -> assign(array("Pollsinfo" => $strPollsinfo,   
             "Noanswer" => NO_ANSWER,
             "Lastpoll" => LAST_POLL,
             "Asend" => A_SEND,
             "Alast10" => A_LAST_10,
-            "Polldays" => POLL_DAYS,
-            "Tdays" => T_DAYS,
             "Pollend" => POLL_END));
 }
 
@@ -368,10 +435,14 @@ if (!isset($_GET['action']))
 */
 $smarty -> assign(array("Action" => $_GET['action'],
     "Aback" => A_BACK,
+    "Nopolls" => NO_POLLS,
     "Tvotes" => T_VOTES,
     "Sumvotes" => SUM_VOTES,
     "Tmembers" => T_MEMBERS,
-    "Location" => $player -> location));
+    "Polldays" => POLL_DAYS,
+    "Tdays" => T_DAYS,
+    "Location" => $player -> location,
+    "PlayerRank" => $player -> rank));
 $smarty -> display('polls.tpl');
 
 require_once("includes/foot.php");
