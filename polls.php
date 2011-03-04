@@ -63,6 +63,7 @@ if (!isset($_GET['action']))
         $arrVotes = array();
         $intVotes = 0;
         $i = 0;
+        $isAnyAnswer = false;
         while (!$objPoll -> EOF)
         {
             if ($objPoll -> fields['votes'] < 0)
@@ -70,7 +71,6 @@ if (!isset($_GET['action']))
                 $strQuestion = $objPoll -> fields['poll'];
                 $intDays = $objPoll -> fields['days'];
                 $intMembers = $objPoll -> fields['members'];
-                $isAnyAnswer = false;
             }
                 else
             {
