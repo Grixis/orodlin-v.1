@@ -11,7 +11,7 @@
         <div align="center">
             <table width="100%">
                 <tr>
-                    <td colspan="2"><b>{$Question}</b></td>
+                    <td colspan="2"><b>{$Question}</b>{if $PlayerRank == "Admin"} (<a href="polls.php?action=edit">edytuj ankiete</a>){/if}</td>
                 </tr>
                 {if $isAnyAnswer == false}
                 <tr>
@@ -110,6 +110,22 @@
     <a href="polls.php">{$Aback}</a>
 {/if}
 {if $Action == "edit"}
+    {$Message}
+        {if $Pollid == "0"}
+            <div align="center">{$Nopolls}</div><br />
+        {/if}
 
+        {if $Pollid != "0"}
+              <form method="post" action="polls.php?action=edit&amp;step=Apply">
+                {$LangQuestion} <br /><textarea name="question" cols="60" rows="2">{$Question}</textarea><br />
+                {$Polldays} <input type="text" size="5" name="days" value="{$Days}"/> {$Tdays}<br />
+                {section name=poll loop=$Answers}
+                   {$Answer} <input type="text" name="answer{$smarty.section.poll.index}" size="60" value="{$Answers[poll]}" /><br />
+                {/section}
+                <input type="hidden" name="amount" value="{$Amount}" />
+                <input type="hidden" name="pid" value="{$Pollid}" />
+                <br /><br /><input type="submit" value="{$ApplyChange}" />
+             </form>
+        {/if}
 {/if}
 {/strip}
