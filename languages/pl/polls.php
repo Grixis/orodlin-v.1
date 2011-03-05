@@ -38,6 +38,7 @@ define('A_COMMENTS', 'Komentarze');
 define('NO_POLLS', 'Nie ma jeszcze ankiet');
 define('POLL_DAYS', 'Ankieta potrwa jeszcze');
 define('T_DAYS', 'dni');
+define('EDIT', 'edytuj ankietę');
 if (!isset($_GET['action']))
 {
     if ($player -> location == 'Altara')

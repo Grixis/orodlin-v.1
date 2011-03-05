@@ -11,7 +11,7 @@
         <div align="center">
             <table width="100%">
                 <tr>
-                    <td colspan="2"><b>{$Question}</b>{if $PlayerRank == "Admin"} (<a href="polls.php?action=edit">edytuj ankiete</a>){/if}</td>
+                    <td colspan="2"><b>{$Question}</b>{if $PlayerRank == "Admin"} (<a href="polls.php?action=edit">{$smarty.const.EDIT}</a>){/if}</td>
                 </tr>
                 {if $isAnyAnswer == false}
                 <tr>

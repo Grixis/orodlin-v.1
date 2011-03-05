@@ -647,16 +647,6 @@ if (isset($_GET['view']) && $_GET['view'] == 'poll')
         $objPollid -> Close();
         $strQuestion = $db -> qstr($_POST['question'], get_magic_quotes_gpc());
         $db -> Execute("INSERT INTO polls (id, poll, votes, days) VALUES(".$intId.", ".$strQuestion.", -1, ".$_POST['days'].")") or $db -> ErrorMsg();
-        /**
-         * Add log about new poll
-         */
-        $playersList = $db -> Execute("SELECT id FROM players");
-        while (!$playersList -> EOF)
-        {
-            $db -> Execute('INSERT INTO `log` (`owner`, `log`, `czas`) VALUES('.$playersList -> fields['id'].',\''.NEW_POLL_MESSANGE.'\','.$db -> DBDate($newdate).')');
-            $playersList -> MoveNext();
-        }
-        $playersList -> Close();
         $smarty -> assign(array("Answers" => $arrAnswers,
             "Question" => $_POST['question'],
             "Amount" => $_POST['amount'],
@@ -681,6 +671,17 @@ if (isset($_GET['view']) && $_GET['view'] == 'poll')
             $strAnswer = $db -> qstr($_POST[$strName], get_magic_quotes_gpc());
             $db -> Execute("INSERT INTO polls (id, poll) VALUES(".$_POST['pid'].", ".$strAnswer.")");
         }
+        /**
+         * Add log about new poll
+         */
+        $playersList = $db -> Execute("SELECT id FROM players");
+        while (!$playersList -> EOF)
+        {
+            $db -> Execute('INSERT INTO `log` (`owner`, `log`, `czas`) VALUES('.$playersList -> fields['id'].',\''.NEW_POLL_MESSANGE.'\','.$db -> DBDate($newdate).')');
+            $playersList -> MoveNext();
+        }
+        $playersList -> Close();
+
         $db -> Execute("UPDATE players SET poll='N'");
         $db -> Execute("UPDATE settings SET value='Y' WHERE setting='poll'");
         $smarty -> assign("Message", POLL_ADDED);
