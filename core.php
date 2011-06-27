@@ -282,9 +282,9 @@ else {
 							$core = $db -> Execute("SELECT  `status`, `owner`, `petname`, `coresbase`.`id` AS `name` FROM `coresplayers`, `coresbase` WHERE `coresplayers`.`id` = ".$coreid." AND `base`=`coresbase`.`id`");
 							if (!isset($core) || $core -> EOF) error(NO_CORE);
 							if ($core -> fields['owner'] != $player -> id) error(NOT_YOURS);
-							if (isset($_POST['pass'])) {
+							if (isset($_POST['pid'])) {
 								//integercheck
-								$newowner = (int)$_POST['pass'];
+								$newowner = (int)$_POST['pid'];
 								if (!isset($newowner) || $newowner == '') error(ERROR);
 								if ($newowner == $player -> id) error(NO_SELF);
 								if ($core -> fields['status'] != 'N') error(WRONG_STATUS);

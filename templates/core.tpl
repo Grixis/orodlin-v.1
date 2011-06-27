@@ -96,13 +96,13 @@
 			</form>
 			<br/>
 		{elseif $action == "pass"}
-			<br/>
+			<br />
 			{$smarty.const.PASS_INFO}
-			<br/><form method="post" action="core.php?view=my&amp;id={$Coreid}&amp;action=pass">
-			<input type="text" name="pass" size="5"/>
+			<br /><form method="post" action="core.php?view=my&amp;id={$Coreid}&amp;action=pass">
+			<input type="text" name="pid" size="5" />
 			<input type="submit" value="{$smarty.const.A_PASS}"/>
 			</form>
-			<br/>
+			<br />
 		{elseif $action == "sell" && $Sellinfo != ""}
 			<br/>
 			{$Sellinfo}
