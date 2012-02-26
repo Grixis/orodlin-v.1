@@ -22,7 +22,7 @@ Użytkownikom Windows zalecamy instalację pakietu WAMP.
 
 2. Szybka instalacja:
 
-1. Skopiuj na serwer pliki z katalogu orodlin_engine_v_1.0/
+1. Skopiuj na serwer pliki z katalogu orodlin_engine_v_1.0/ (nazwa katalogu może być inna)
 2. Załóż bazę danych o wybranej nazwie zachowując:
 	- System kodowania znaków dla MySQL: UTF-8 Unicode (utf8)
 	- Metodę porównywania znaków utf8-polish_ci
