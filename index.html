@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+
+  <title>marekmarecki/orodlin-v.1 @ GitHub</title>
+
+  <style type="text/css">
+    body {
+      margin-top: 1.0em;
+      background-color: #5cb1cc;
+      font-family: Helvetica, Arial, FreeSans, san-serif;
+      color: #000000;
+    }
+    #container {
+      margin: 0 auto;
+      width: 700px;
+    }
+    h1 { font-size: 3.8em; color: #a34e33; margin-bottom: 3px; }
+    h1 .small { font-size: 0.4em; }
+    h1 a { text-decoration: none }
+    h2 { font-size: 1.5em; color: #a34e33; }
+    h3 { text-align: center; color: #a34e33; }
+    a { color: #a34e33; }
+    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+    .download { float: right; }
+    pre { background: #000; color: #fff; padding: 15px;}
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .footer { text-align:center; padding-top:30px; font-style: italic; }
+  </style>
+</head>
+
+<body>
+  <a href="https://github.com/marekmarecki/orodlin-v.1"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+
+  <div id="container">
+
+    <div class="download">
+      <a href="https://github.com/marekmarecki/orodlin-v.1/zipball/master">
+        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
+      <a href="https://github.com/marekmarecki/orodlin-v.1/tarball/master">
+        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
+    </div>
+
+    <h1><a href="https://github.com/marekmarecki/orodlin-v.1">Orodlin v.1</a>
+      <span class="small">by <a href="https://github.com/marekmarecki">marekmarecki</a></span></h1>
+
+    <div class="description">
+      Browser-based MMORPG engine
+    </div>
+
+    
+
+    
+
+    
+      <h2>Install</h2>
+      <p>1. Wymagania:
+
+Apache
+PHP 5
+MySQL 5
+
+-----
+
+Zalecane jest korzystanie z Linuksa i zainstalowanie tych pakietów z repozytorium.
+
+Np. dla Fedory:
+
+yum install httpd php php-gd php-mysql php-mbstring mysql mysql-server
+
+Dla Debiana/Ubuntu/Minta:
+
+sudo apt-get install apache2 libapache2-mod-php5 php5-mysql mysql-server phpmyadmin
+
+Użytkownikom Windows zalecamy instalację pakietu WAMP.
+
+-----
+
+2. Szybka instalacja:
+
+1. Skopiuj na serwer pliki z katalogu orodlin_engine_v_1.0/ (nazwa katalogu może być inna)
+2. Załóż bazę danych o wybranej nazwie zachowując:
+	- System kodowania znaków dla MySQL: UTF-8 Unicode (utf8)
+	- Metodę porównywania znaków utf8-polish_ci
+3. Do świeżo utworzonej bazy danych zaimportuj plik ze strukturą wszystkich tabel oraz podstawowych insertów z katalogu:
+	orodlin_engine_v_1.0/install/db/OroDatabase.sql
+4. W pliku orodlin_engine_v_1.0/install/config.php konfigurujemy dostęp do DB i plików, nazwę gry, miast, e-maile administracyjne. Przenosimy plik do katalogu orodlin_engine_v_1.0/includes/
+5. Możesz zalogowac się na konto:
+	login: admin@xxx.pl
+	hasło: 123456
+</p>
+    
+
+    
+      <h2>License</h2>
+      <p>AGPL 3 (o ile w kodzie nie zaznaczono inaczej)</p>
+    
+
+    
+      <h2>Authors</h2>
+      <p>Jakub Stasiak <kuba.stasiak at gmail.com><br/>Łukasz Ludwiczak <l.ludwiczak at gmail.com><br/>Marcin Mańkowski <briskuth at gmail.com><br/>Marek 'marq' Chodor <marek.chodor at gmail.com><br/>Marek Stasiak <em.stasiak at gmail.com><br/>mori <ziniquel at users.sourceforge.net><br/>Nailo Mzah <s.paweska at gmail.com><br/>Paweł Dudziec <pawel.dudziec at gmail.com><br/>Sławomir Białas <stormsb at gmail.com><br/>thindil <thindil at users.sourceforge.net><br/>Tomasz Duda <tduda at users.sourceforge.net><br/>Tril <tril at faerun.com.pl><br/>Witold Sosnowski <albi at jabster.pl><br/>yeskov <yeskov at users.sourceforge.net><br/>Zamareth <zamareth at gmail.com><br/>Zamareth <zamareth at users.sourceforge.net><br/>Callidus (sircallidus@gmail.com)</p>
+    
+
+    
+
+    <h2>Download</h2>
+    <p>
+      You can download this project in either
+      <a href="https://github.com/marekmarecki/orodlin-v.1/zipball/master">zip</a> or
+      <a href="https://github.com/marekmarecki/orodlin-v.1/tarball/master">tar formats.
+    </p>
+    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+      by running:
+      <pre>$ git clone git://github.com/marekmarecki/orodlin-v.1</pre>
+    </p>
+
+    <div class="footer">
+      get the source code on GitHub : <a href="https://github.com/marekmarecki/orodlin-v.1">marekmarecki/orodlin-v.1</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
